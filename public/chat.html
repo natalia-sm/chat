@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chat</title>
+  <style>
+    ul {
+      height: 100px;
+      display: inline-block;
+      overflow: auto;
+      width: 300px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+      <h1>Chat</h1>
+  </header>
+  <section>
+      <form action="" id="form">
+        <ul id="mensajes">
+        </ul>
+        <ul>
+        </ul>
+        <div>
+            <input type="text" id="mensaje" name="mensaje">
+            <button>Enviar</button>
+        </div>
+      </form>
+  </section>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    let socket = io('http://localhost:3000');
+    let form = document.getElementById('form');
+  
+    form.onsubmit = e => {
+      e.preventDefault();  
+      socket.emit('mensajeEnviado', document.getElementById('mensaje').value);   
+      document.getElementById('mensaje').value = '';
+    }
+
+    socket.on('publicarMensaje', (msg) => {
+      let li = document.createElement('li');
+      document.getElementById('mensajes').appendChild(li);
+      li.innerText = msg;
+    })
+  </script>
+</body>
+</html>

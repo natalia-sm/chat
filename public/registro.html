@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+  <title>Registro</title>
+</head>
+<body>
+    <header>
+      <h1 class="display-4 text-center">Registro</h1>
+    </header>
+    <section id="registro">
+        <div class="container">
+          <div class="row justify-content-center">
+            <form action="/registro.html" method="POST" id="formulario" enctype="application/x-www-form-urlencoded">
+              <label for="nombre">Nombre:</label>
+              <input type="text" placeholder="Nombre" id='inputNombre' name="nombre">
+              <label for="apellido">Apellido:</label>
+              <input type="text" placeholder="Apellido" id='inputApellido' name="apellido">
+              <label for="usuario">Nombre de usuario:</label>
+              <input type="text" placeholder="Nombre de usuario" id='inputUsuario' name="usuario">
+              <label for="email">Email:</label>
+              <input type="email" placeholder="Email" id='inputEmail' name="email">
+              <button type="submit" class="btn btn-dark">Enviar</button>
+            </form>
+          </div>
+        </div>
+    </section>
+</body>
+</html>
